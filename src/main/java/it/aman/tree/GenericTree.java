@@ -84,7 +84,7 @@ public class GenericTree<T> {
 		if(result != null)
 			return result;
 		
-		if(nodeToVisit != null && nodeToVisit.getDegree() > 0) {
+		if(nodeToVisit != null && Integer.signum(nodeToVisit.getDegree()) == 1) {
 			childNodesToVisit.addAll(nodeToVisit.getChildren());
 			find(toFind);
 		}
